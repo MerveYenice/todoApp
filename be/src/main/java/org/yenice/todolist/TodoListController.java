@@ -3,7 +3,7 @@ package org.yenice.todolist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.yenice.user.User;
 
@@ -18,7 +18,7 @@ public class TodoListController {
     @Autowired
     private TodoItemRepository itemRepository;
 
-    @PostMapping("/lists")
+   /* @PostMapping("/lists")
     public ResponseEntity<TodoListCreatedResponse> create(@RequestBody TodoListRequest todoListRequest,
                                          Authentication authentication) {
         TodoList todoList = repository.save(TodoList.from(todoListRequest, getOwnerFromAuthentication(authentication)));
@@ -32,8 +32,8 @@ public class TodoListController {
         TodoItem todoItem = itemRepository.save(TodoItem.from(todoItemRequest, todoList));
         return new ResponseEntity<>(TodoItemCreatedResponse.from(todoItem), HttpStatus.CREATED);
     }
-
-    private User getOwnerFromAuthentication(Authentication authentication) {
+*/
+  /*  private User getOwnerFromAuthentication(Authentication authentication) {
         return (User) authentication.getPrincipal();
     }
 
@@ -70,7 +70,7 @@ public class TodoListController {
                                          @RequestBody TodoListRequest request,
                                          Authentication authentication) {
         TodoList todoList = repository.findOneByIdAndOwner(id, getOwnerFromAuthentication(authentication));
-        todoList.merge(request);
+       // todoList.merge(request);
         repository.save(todoList);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -82,8 +82,8 @@ public class TodoListController {
                                              Authentication authentication) {
         TodoList todoList = repository.findOneByIdAndOwner(id, getOwnerFromAuthentication(authentication));
         TodoItem todoItem = itemRepository.findOneByIdAndListAndOwner(itemId, todoList, getOwnerFromAuthentication(authentication));
-        todoItem.merge(request);
+       // todoItem.merge(request);
         itemRepository.save(todoItem);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+    }*/
 }

@@ -1,11 +1,6 @@
 package org.yenice.todolist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TodoItemRequest {
 
@@ -15,4 +10,9 @@ public class TodoItemRequest {
     public TodoItemRequest(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
 }

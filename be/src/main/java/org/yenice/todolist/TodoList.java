@@ -1,9 +1,6 @@
 package org.yenice.todolist;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.yenice.user.User;
 
 import javax.persistence.*;
@@ -12,8 +9,6 @@ import java.util.List;
 
 
 @Entity
-@Data
-@NoArgsConstructor
 @Table(name="todo_list")
 public class TodoList {
 
@@ -32,16 +27,28 @@ public class TodoList {
     @JsonIgnore
     private User owner;
 
-    public TodoList(String name, User owner) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
-    public static TodoList from(TodoListRequest todoListRequest, User user) {
-        return new TodoList(todoListRequest.getName(), user);
-    }
-
-    public void merge(TodoListRequest request) {
-        setName(request.getName());
-    }
 }

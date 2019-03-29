@@ -1,19 +1,13 @@
 package org.yenice.todolist;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.yenice.user.User;
 
 import javax.persistence.*;
 
 
 @Entity
-@Data
-@NoArgsConstructor
-@ToString(exclude = {"list"})
-@Table(name="todo_item")
+@Table(name = "todo_item")
 public class TodoItem {
     @Id
     @GeneratedValue
@@ -32,18 +26,43 @@ public class TodoItem {
     @JsonIgnore
     private User owner;
 
-    public TodoItem(String name, TodoList list, User owner) {
-        this.name = name;
+    public TodoList getList() {
+        return list;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setList(TodoList list) {
         this.list = list;
+    }
+
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
-    public static TodoItem from(TodoItemRequest todoItemRequest, TodoList todoList) {
-        return new TodoItem(todoItemRequest.getName(), todoList, todoList.getOwner());
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public void merge(TodoItemRequest request) {
-        this.name = request.getName();
-        this.completed = request.isCompleted();
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

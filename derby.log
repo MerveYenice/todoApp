@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Tue Mar 26 22:07:41 EET 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0169-bb66-ab51-0000079aa8b0 
-on database directory memory:/home/onur/Desktop/todolist2/testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Thu Mar 28 22:26:04 EET 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0169-c5c4-35af-0000143307c0 
+on database directory /home/onur/Desktop/todoApp/db with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
 Loaded from file:/home/onur/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_201-b09
-user.dir=/home/onur/Desktop/todolist2
+user.dir=/home/onur/Desktop/todoApp
 os.name=Linux
 os.arch=amd64
 os.version=4.13.0-45-generic

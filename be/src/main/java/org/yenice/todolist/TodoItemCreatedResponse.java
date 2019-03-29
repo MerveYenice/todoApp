@@ -1,10 +1,5 @@
 package org.yenice.todolist;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class TodoItemCreatedResponse {
     private String id;
     private String name;

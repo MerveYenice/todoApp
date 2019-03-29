@@ -1,10 +1,5 @@
 package org.yenice.todolist;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class TodoListRequest {
 
     private String name;
@@ -13,4 +8,11 @@ public class TodoListRequest {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

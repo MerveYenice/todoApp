@@ -1,14 +1,9 @@
 package org.yenice.todolist;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Data
-@NoArgsConstructor
 public class TodoListCreatedResponse {
     private String id;
     private String name;
